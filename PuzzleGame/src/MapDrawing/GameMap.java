@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  *
  * @author tergv
  */
-public class GameMap {
+public final class GameMap {
     private final JFrame thisFrame;
     public int [][] currentMap;
     public int level;
@@ -30,7 +30,7 @@ public class GameMap {
     
     public void checkIfMapSolvable(){
         GameRules solvabeRule = new GameCheckMapSolvable(this);
-        if(!solvabeRule.checkRule()){
+        while(!solvabeRule.checkRule()){
             generateNewMap = new MapGenerator(level);
             currentMap = generateNewMap.newMap();
         }
@@ -74,7 +74,7 @@ public class GameMap {
         changeButton.newButtonCliked(oldX, oldY, newX, newY);
     }
 
-    private boolean newLevelCheck(int newLevel) {
+    public boolean newLevelCheck(int newLevel) {
         return newLevel < 10 && newLevel > 0;
     }
     
