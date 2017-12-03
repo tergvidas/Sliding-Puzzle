@@ -70,8 +70,8 @@ public class GameMap {
     }
     
     public void changeGreenButton(int oldX, int oldY, int newX, int newY){
-        currentMap[oldX][oldY] = currentMap[newX][newY];
-        currentMap[newX][newY] = 0;
+        MapChangeButtons changeButton = new MapChangeButtons(currentMap);
+        changeButton.newButtonCliked(oldX, oldY, newX, newY);
     }
 
     private boolean newLevelCheck(int newLevel) {
