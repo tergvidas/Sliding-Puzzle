@@ -20,7 +20,7 @@ public class PuzzleGame {
    public static void main(String[] args) throws Exception {
        Game game = new GameWindow();
        
-       //game.start();
+       game.start();
       
     }
 }

@@ -27,7 +27,7 @@ public class GameWindow extends JFrame implements Game {
 
         thisFrame.setSize(360,360);
         thisFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        thisFrame.setVisible(true);
+        thisFrame.setVisible(false);
         thisFrame.setResizable(false);
         
 	windowItems = new GameWindowItems(map, windowPanel);
@@ -38,11 +38,7 @@ public class GameWindow extends JFrame implements Game {
     public void start() throws Exception {
         SwingUtilities.invokeAndWait(new Runnable(){
             public void run(){
-                try {
-                    new GameWindow();
-                } catch (IOException ex) {
-                }
-
+                    thisFrame.setVisible(true);
             }
         });
     }
